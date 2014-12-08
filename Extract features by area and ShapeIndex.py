@@ -5,7 +5,7 @@
 #test33dfgh
 
 import arcpy
-
+import numpy
 
 arcpy.CheckOutExtension("Spatial") # Lizenzstatus für Spatial Analyst Toolbox abklären
 arcpy.env.overwriteOutput = True #Geoprocessing Outputs generell überschreiben
