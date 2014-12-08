@@ -2,10 +2,8 @@
 # http://www.spatialanalysisonline.com/HTML/?shape.htm
 # Ai as the Area of polygon i, and Li as its perimeter length, and Bi as the area of a circle with perimeter Li, then example measures include:
 # Shape index = sqr (Ai/Bi)
-#test33dfgh
 
 import arcpy
-import numpy
 
 arcpy.CheckOutExtension("Spatial") # Lizenzstatus für Spatial Analyst Toolbox abklären
 arcpy.env.overwriteOutput = True #Geoprocessing Outputs generell überschreiben
