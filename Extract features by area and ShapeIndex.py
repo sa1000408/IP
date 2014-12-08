@@ -1,7 +1,11 @@
+#!/usr/bin/python
+#-*- coding:utf-8 -*-
+
 # Extract features by area and ShapeIndex
 # http://www.spatialanalysisonline.com/HTML/?shape.htm
 # Ai as the Area of polygon i, and Li as its perimeter length, and Bi as the area of a circle with perimeter Li, then example measures include:
 # Shape index = sqr (Ai/Bi)
+
 
 import arcpy
 
@@ -27,7 +31,7 @@ arcpy.CalculateField_management("lyr","Bi", " (([Li]^2)/(4*3.14159265359))")
 arcpy.CalculateField_management("lyr","ShapeIndex", "Sqr ( [Ai]/[Bi])")
 
 # Select by area
-arcpy.SelectLayerByAttribute_management ("lyr", "NEW_SELECTION",' "Ai" >=6 AND "Ai" <= 50 AND "ShapeIndex" >=0.5')
+arcpy.SelectLayerByAttribute_management ("lyr", "NEW_SELECTION",' "Ai" >= 6 AND "Ai" <= 50 AND "ShapeIndex" >=0.5')
 
 
 # Write the selected features to a new featureclass
