@@ -30,17 +30,7 @@ arcpy.CalculateField_management("lyr", "Li", "!shape.length!", "PYTHON")
 arcpy.CalculateField_management("lyr","Bi", " (([Li]^2)/(4*3.14159265359))")
 arcpy.CalculateField_management("lyr","ShapeIndex", "Sqr ( [Ai]/[Bi])")
 
-
-minAreaInput = raw_input("Min Area: ")
-maxAreaInput = raw_input("Max Area: ")
-shapeIndexInput= raw_input("Shape Index >=: ")
-selectByArea =  "'"+ '"Ai" >= '+minAreaInput+' AND "Ai" <= '+ maxAreaInput + ' AND "ShapeIndex" >= ' + shapeIndexInput +"'"
-
-arcpy.SelectLayerByAttribute_management ("lyr", "NEW_SELECTION",selectByArea)
-
-
-#arcpy.SelectLayerByAttribute_management ("lyr", "NEW_SELECTION",'"Ai" >= 6 AND "Ai" <= 50 AND "ShapeIndex" >=0.5')
-
+arcpy.SelectLayerByAttribute_management ("lyr", "NEW_SELECTION",'"Ai" >= 6 AND "Ai" <= 50 AND "ShapeIndex" >=0.5')
 
 # Write the selected features to a new featureclass
 arcpy.CopyFeatures_management("lyr", "output_select_by_area7.shp")
